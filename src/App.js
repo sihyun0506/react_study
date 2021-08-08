@@ -60,11 +60,38 @@ function App() {
         <p>8월 5일 발행</p>
         <hr/>
       </div>
+
+      {/* 많은 HTML을 한 단어로 줄여서 쓸 수 있는 방법 => 컴포넌트 (리액트의 장점!!)
+        1. 사이트 내에서 반복적으로 출현하는 것들을 컴포넌트로
+        2. 자주 변경되는(재랜더링이 많이 일어나는) HTML UI 들은 컴포넌트로 하면 성능 올라감
+        3. 페이지를 만들때도 컴포넌트로
+       장점   : 컴포넌트 안에 컴포넌트 만드는 등, HTML을 묶어서 '관리' 가능
+       단점   : state 를 사용할 때 복잡해짐 다른 컴포넌트의 state를 가져올 수 없음.
+                -> state를 활용하고 싶은 컴포넌트에 데이터를 전달 해줘야함
+                (상위 컴포넌트의 state 쓰려면 props 문법이용해야함)
+       주의점 : 이름의 시작은 대문자! 
+                return()안에는 하나의 태그만 ex. <div></div>, <></> <-프레그먼트
+                컴포넌트 만드는 위치는 function App() 과 나란히! 사실 function App()도 컴포넌트
+      */}
+      <Modal></Modal>
+      <Modal/>
+
+
       {/* <h4> { posts } </h4> */}
       {/* <img src={ logo }/> */}
       {/* <h4> { func() } </h4> */}
     </div>
   );
+}
+
+function Modal(){
+  return (
+    <div className="modal">
+      <h2>title</h2>
+      <p>date</p>
+      <p>context</p>
+  </div>
+  )
 }
 
 export default App;
